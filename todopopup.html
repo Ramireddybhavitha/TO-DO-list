@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP</title>
+    <link rel="stylesheet" href="./todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <section id="icon">
+    <img src="./images.png" alt="" id="todo">
+    <h1>Click here!</h1>
+    </section>
+    <section id="dis">
+    
+        <div id="div1">
+        <h1>Task List 2021 &nbsp;&nbsp;<i class="fa-solid fa-circle-xmark" style="margin-left: 200px; " id="close"></i></h1>
+                <input type="text" placeholder="write something">
+                <button>add task</button>
+            
+        </div>
+        <div id="list"></div>
+        </section>
+        <script>
+            var todo=document.getElementById('todo')
+            let input=document.querySelector('input')
+            let btn=document.querySelector('button')
+            let task=document.getElementById('list')
+            var display=document.getElementById('dis')
+            var close=document.getElementById('close')
+    btn.onclick=function(){
+    if(input.value.length===0){
+    alert('enter some value')
+    }
+    else{
+    task.innerHTML +=`<div class="hii"> ${input.value} <i class="fa fa-trash" aria-hidden="true"></i> </div>`
+    
+    let del=document.getElementsByClassName('fa-trash')
+    for(var i=0;i<del.length;i++){
+    del[i].onclick=function(){
+        this.parentNode.remove()
+    }
+    }
+    input.value =''
+    }
+    }
+    todo.onclick=function(){
+if(dis.style.visibility==='visible'){
+    dis.style.visibility='hidden'
+}
+else{
+    dis.style.visibility='visible'
+}
+}
+// todo.dblclick=function(){
+// dis.style.visibility='hidden'
+
+// }
+
+//     let click=document.getElementById('todo')
+//     for(var j=0;j<click.length;j++){
+//         todo[j].onclick=function(){
+//             if(j%2==0){
+// dis.style.visibility='visible'
+//             }
+//             else{
+// dis.style.visibility='hidden'
+
+//             }
+//         }
+//     }
+    close.onclick=function(){
+dis.style.visibility='hidden'
+task.innerHTML=' '
+    }
+    
+        </script>
+    
+</body>
+</html>
